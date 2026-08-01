@@ -8,46 +8,50 @@
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
     body {
-      background-color: #ffffff;
+      background-color: #f0f0f0;
       font-family: 'Open Sans', Arial, sans-serif;
-      margin: 0;
-      padding: 10px;
-      color: #000;
       display: flex;
       justify-content: center;
+      padding: 20px;
+      margin: 0;
+      color: #000;
     }
 
     .certificate-container {
-      width: 100%;
-      max-width: 800px;
+      background-color: #ffffff;
+      width: 650px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       box-sizing: border-box;
     }
 
+    /* Multi-line outer border style */
     .outer-border {
       border: 1px solid #555;
-      padding: 2px;
+      padding: 3px;
     }
 
     .middle-border {
-      border: 2px solid #333;
-      padding: 2px;
+      border: 3px solid #333;
+      padding: 3px;
     }
 
     .inner-border {
       border: 1px solid #555;
-      padding: 25px 20px;
+      padding: 30px 40px;
       position: relative;
       background-color: #fff;
+      overflow: hidden;
     }
 
-    /* মাঝখানের লোগো (Watermark) স্পষ্ট করার ফিক্স */
+    /* Watermark Background */
     .watermark {
       position: absolute;
-      top: 50%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 320px;
-      opacity: 0.35; /* ভিজিবিলিটি বাড়ানো হয়েছে */
+      opacity: 0.22;
       pointer-events: none;
       z-index: 1;
     }
@@ -59,30 +63,30 @@
 
     .header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .gov-logo {
-      width: 65px;
-      height: 65px;
-      margin-bottom: 5px;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 10px;
     }
 
     .header h2 {
       margin: 2px 0;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
     }
 
     .header h3 {
       margin: 2px 0;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
     }
 
     .header h4 {
-      margin: 5px 0;
-      font-size: 14px;
+      margin: 8px 0;
+      font-size: 15px;
       font-weight: 400;
     }
 
@@ -92,7 +96,7 @@
     }
 
     .tin-title {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       border-bottom: 1px solid #000;
       display: inline-block;
@@ -100,7 +104,7 @@
     }
 
     .cert-text {
-      margin-top: 20px;
+      margin-top: 25px;
       font-size: 13.5px;
       line-height: 1.6;
     }
@@ -108,7 +112,7 @@
     .particulars-title {
       font-weight: 700;
       margin-top: 15px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       font-size: 14px;
     }
 
@@ -121,7 +125,7 @@
     }
 
     .particulars-list li {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .bold {
@@ -129,16 +133,54 @@
     }
 
     .date-section {
-      margin-top: 25px;
-      font-size: 13.5px;
+      margin-top: 35px;
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .please-note {
+      width: 38%;
+      font-size: 9px;
+      line-height: 1.3;
+    }
+
+    .please-note h5 {
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0 0 5px 0;
+      text-decoration: underline;
+    }
+
+    /* স্ক্যানার বা QR কোডের জায়গাটা ফাঁকা ও সাদা রাখার জন্য */
+    .qr-blank-space {
+      width: 110px;
+      height: 110px;
+      background-color: transparent;
+    }
+
+    .authority {
+      width: 35%;
+      font-size: 9.5px;
+      line-height: 1.3;
+    }
+
+    .authority .bold-title {
+      font-weight: 700;
+      font-size: 10px;
     }
 
     .nb-footer {
       text-align: center;
-      font-size: 10px;
-      margin-top: 30px;
+      font-size: 9px;
+      margin-top: 25px;
       border-top: 1px solid #000;
-      padding-top: 4px;
+      padding-top: 3px;
     }
   </style>
 </head>
@@ -149,13 +191,11 @@
       <div class="middle-border">
         <div class="inner-border">
           
-          <!-- মাঝখানের বাংলাদেশের লোগো -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="watermark" alt="Bangladesh Seal Watermark">
+          <!-- Watermark Image -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="watermark" alt="Watermark">
 
-          <div class="content">
-            <!-- Header -->
+          <div class="content"><!-- Header -->
             <div class="header">
-              <!-- উপরে ছোট লোগো -->
               <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="gov-logo" alt="BD Logo">
               <h2>Government of the People's Republic of Bangladesh</h2>
               <h3>National Board of Revenue</h3>
@@ -170,7 +210,9 @@
             <!-- Certification Text -->
             <div class="cert-text">
               This is a certify that <span class="bold">HAPPIER LOAN</span> is a registered Taxpayer of National Board of Revenue under the jurisdiction of <span class="bold">Taxes Circle-131, Taxes Zone 06, Dhaka</span>
-            </div><!-- Particulars -->
+            </div>
+
+            <!-- Particulars -->
             <div class="particulars-title">Taxpayer's particulars:</div>
             <ol class="particulars-list">
               <li>1. Company Name: <span class="bold">HAPPIERLOAN INC.</span></li>
@@ -183,6 +225,29 @@
             <!-- Date -->
             <div class="date-section">
               Date : <span class="bold">November 17,2025</span>
+            </div>
+
+            <!-- Footer Details -->
+            <div class="footer-grid">
+              <!-- বাম দিকের Please Note সেকশন -->
+              <div class="please-note">
+                <h5>Please Note :</h5>
+                1. A Taxpayer is liable to file the Return of income under section 75 of the income Tax Ordinance, 1984.<br><br>
+                2. Failure to file Return of income under section 75 is liable to-<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(a) Penalty under section 124 and<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;(b) Prosecution Under Section 164 of the income Tax Ordinance, 1984
+              </div>
+
+              <!-- মাঝখানের স্ক্যানারের খালি সাদা জায়গা -->
+              <div class="qr-blank-space"></div>
+
+              <!-- ডান দিকের Deputy Commissioner সেকশন -->
+              <div class="authority">
+                <div class="bold-title">Deputy Commissioner of Taxes</div>
+                Taxes Circle-131<br>
+                Taxes Zone 06, Dhaka<br>
+                Address : 209/A-B, Shahid Syed Nazrul Islam Sarani Purana Paltan, Dhaka Phone 55112438
+              </div>
             </div>
 
             <div class="nb-footer">
