@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TIN Certificate</title>
+  <!-- Link to QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
@@ -25,7 +27,6 @@
       box-sizing: border-box;
     }
 
-    /* Multi-line outer border style */
     .outer-border {
       border: 1px solid #555;
       padding: 3px;
@@ -44,14 +45,13 @@
       overflow: hidden;
     }
 
-    /* Watermark Background */
     .watermark {
       position: absolute;
       top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 320px;
-      opacity: 0.22;
+      opacity: 0.15; /* Slightly reduced for better readability */
       pointer-events: none;
       z-index: 1;
     }
@@ -157,11 +157,14 @@
       text-decoration: underline;
     }
 
-    /* স্ক্যানার বা QR কোডের জায়গাটা ফাঁকা ও সাদা রাখার জন্য */
-    .qr-blank-space {
+    /* QR Code Container Styling */
+    #qrcode {
       width: 110px;
       height: 110px;
-      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
     }
 
     .authority {
@@ -191,10 +194,9 @@
       <div class="middle-border">
         <div class="inner-border">
           
-          <!-- Watermark Image -->
           <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="watermark" alt="Watermark">
 
-          <div class="content"><!-- Header -->
+          <div class="content">
             <div class="header">
               <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="gov-logo" alt="BD Logo">
               <h2>Government of the People's Republic of Bangladesh</h2>
@@ -202,17 +204,14 @@
               <h4>Taxpayer's Identification Number (TIN) Certificate</h4>
             </div>
 
-            <!-- TIN Number -->
             <div class="tin-box">
               <span class="tin-title">TIN: 224187378588</span>
             </div>
 
-            <!-- Certification Text -->
             <div class="cert-text">
-              This is a certify that <span class="bold">HAPPIER LOAN</span> is a registered Taxpayer of National Board of Revenue under the jurisdiction of <span class="bold">Taxes Circle-131, Taxes Zone 06, Dhaka</span>
+              This is to certify that <span class="bold">HAPPIER LOAN</span> is a registered Taxpayer of National Board of Revenue under the jurisdiction of <span class="bold">Taxes Circle-131, Taxes Zone 06, Dhaka</span>
             </div>
 
-            <!-- Particulars -->
             <div class="particulars-title">Taxpayer's particulars:</div>
             <ol class="particulars-list">
               <li>1. Company Name: <span class="bold">HAPPIERLOAN INC.</span></li>
@@ -222,31 +221,27 @@
               <li>5) Status: <span class="bold">Individual</span></li>
             </ol>
 
-            <!-- Date -->
             <div class="date-section">
-              Date : <span class="bold">November 17,2025</span>
+              Date: <span class="bold">November 17, 2025</span>
             </div>
 
-            <!-- Footer Details -->
             <div class="footer-grid">
-              <!-- বাম দিকের Please Note সেকশন -->
               <div class="please-note">
-                <h5>Please Note :</h5>
+                <h5>Please Note:</h5>
                 1. A Taxpayer is liable to file the Return of income under section 75 of the income Tax Ordinance, 1984.<br><br>
                 2. Failure to file Return of income under section 75 is liable to-<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;(a) Penalty under section 124 and<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;(b) Prosecution Under Section 164 of the income Tax Ordinance, 1984
               </div>
 
-              <!-- মাঝখানের স্ক্যানারের খালি সাদা জায়গা -->
-              <div class="qr-blank-space"></div>
+              <!-- This div will hold the QR Code -->
+              <div id="qrcode"></div>
 
-              <!-- ডান দিকের Deputy Commissioner সেকশন -->
               <div class="authority">
                 <div class="bold-title">Deputy Commissioner of Taxes</div>
                 Taxes Circle-131<br>
                 Taxes Zone 06, Dhaka<br>
-                Address : 209/A-B, Shahid Syed Nazrul Islam Sarani Purana Paltan, Dhaka Phone 55112438
+                Address: 209/A-B, Shahid Syed Nazrul Islam Sarani Purana Paltan, Dhaka Phone 55112438
               </div>
             </div>
 
@@ -259,6 +254,24 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Generate QR Code automatically
+    window.onload = function() {
+      // Get the current URL of the page
+      var currentUrl = window.location.href;
+
+      // Initialize the QR Code inside the #qrcode div
+      new QRCode(document.getElementById("qrcode"), {
+        text: currentUrl,
+        width: 110,
+        height: 110,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
+    };
+  </script>
 
 </body>
 </html>
