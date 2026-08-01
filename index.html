@@ -8,135 +8,120 @@
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
     body {
-      background-color: #f0f0f0;
+      background-color: #ffffff;
       font-family: 'Open Sans', Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      color: #000;
       display: flex;
       justify-content: center;
-      padding: 10px; /* Reduced body padding */
-      margin: 0;
-      color: #000;
     }
 
     .certificate-container {
-      background-color: #ffffff;
-      width: 100%; /* Full width for container */
-      max-width: 600px; /* Maximum content width */
-      padding: 10px; /* Inner container padding */
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 800px;
       box-sizing: border-box;
     }
 
-    /* Outer borders are now centered with content */
     .outer-border {
       border: 1px solid #555;
       padding: 2px;
-      display: flex;
-      justify-content: center;
     }
 
     .middle-border {
       border: 2px solid #333;
       padding: 2px;
-      display: flex;
-      justify-content: center;
-      width: 100%;
     }
 
     .inner-border {
       border: 1px solid #555;
-      padding: 15px; /* Content padding */
+      padding: 25px 20px;
       position: relative;
       background-color: #fff;
-      overflow: hidden;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center content horizontally */
     }
 
-    /* Center-aligned content elements */
+    /* মাঝখানের লোগো (Watermark) স্পষ্ট করার ফিক্স */
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      opacity: 0.35; /* ভিজিবিলিটি বাড়ানো হয়েছে */
+      pointer-events: none;
+      z-index: 1;
+    }
+
     .content {
       position: relative;
       z-index: 2;
-      width: 100%; /* Contents take full available width */
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center elements within content */
     }
 
     .header {
       text-align: center;
-      margin-bottom: 15px;
-      width: 100%; /* Ensure header takes full width for centering */
+      margin-bottom: 20px;
     }
 
     .gov-logo {
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       margin-bottom: 5px;
     }
 
     .header h2 {
-      margin: 1px 0;
-      font-size: 15px;
+      margin: 2px 0;
+      font-size: 16px;
       font-weight: 700;
     }
 
     .header h3 {
-      margin: 1px 0;
-      font-size: 14px;
+      margin: 2px 0;
+      font-size: 15px;
       font-weight: 700;
     }
 
     .header h4 {
       margin: 5px 0;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 400;
     }
 
     .tin-box {
       text-align: center;
-      margin: 10px 0;
-      width: 100%; /* Ensure tin-box takes full width for centering */
+      margin: 15px 0;
     }
 
     .tin-title {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 700;
       border-bottom: 1px solid #000;
       display: inline-block;
-      padding-bottom: 1px;
+      padding-bottom: 2px;
     }
 
     .cert-text {
-      margin-top: 15px;
-      font-size: 12px;
-      line-height: 1.5;
-      text-align: center; /* Center-align text */
-      width: 100%; /* Ensure full width for centering */
+      margin-top: 20px;
+      font-size: 13.5px;
+      line-height: 1.6;
     }
 
     .particulars-title {
       font-weight: 700;
-      margin-top: 10px;
-      margin-bottom: 5px;
-      font-size: 12.5px;
-      text-align: center; /* Center-align title */
-      width: 100%; /* Ensure full width for centering */
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-size: 14px;
     }
 
     .particulars-list {
-      margin: 0 auto; /* Center list within container */
+      margin: 0;
       padding: 0;
       list-style: none;
-      font-size: 12px;
-      line-height: 1.6;
-      width: 90%; /* Limit list width for readability and center */
-      max-width: 450px;
+      font-size: 13.5px;
+      line-height: 1.8;
     }
 
     .particulars-list li {
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .bold {
@@ -144,42 +129,16 @@
     }
 
     .date-section {
-      margin-top: 20px;
-      font-size: 12.5px;
-      text-align: center; /* Center-align date */
-      width: 100%; /* Ensure full width for centering */
-    }
-
-    /* Note and Authority sections are now integrated in the central layout */
-    .note-and-authority {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center elements within this section */
-      margin-top: 15px;
-      width: 90%; /* Center this combined section */
-      max-width: 450px;
-      font-size: 10px;
-      line-height: 1.3;
-      text-align: left; /* Keep internal text left-aligned within centered columns */
-    }.note-text, .authority-text {
-      margin-bottom: 10px;
-      width: 100%; /* Align text content within the column */
-    }
-
-    .please-note h5 {
-      font-size: 11px;
-      font-weight: 700;
-      margin: 0 0 3px 0;
-      text-decoration: underline;
+      margin-top: 25px;
+      font-size: 13.5px;
     }
 
     .nb-footer {
       text-align: center;
-      font-size: 9px;
-      margin-top: 15px;
+      font-size: 10px;
+      margin-top: 30px;
       border-top: 1px solid #000;
-      padding-top: 2px;
-      width: 100%; /* Ensure full width for centering */
+      padding-top: 4px;
     }
   </style>
 </head>
@@ -190,9 +149,13 @@
       <div class="middle-border">
         <div class="inner-border">
           
+          <!-- মাঝখানের বাংলাদেশের লোগো -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="watermark" alt="Bangladesh Seal Watermark">
+
           <div class="content">
             <!-- Header -->
             <div class="header">
+              <!-- উপরে ছোট লোগো -->
               <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="gov-logo" alt="BD Logo">
               <h2>Government of the People's Republic of Bangladesh</h2>
               <h3>National Board of Revenue</h3>
@@ -207,9 +170,7 @@
             <!-- Certification Text -->
             <div class="cert-text">
               This is a certify that <span class="bold">HAPPIER LOAN</span> is a registered Taxpayer of National Board of Revenue under the jurisdiction of <span class="bold">Taxes Circle-131, Taxes Zone 06, Dhaka</span>
-            </div>
-
-            <!-- Particulars -->
+            </div><!-- Particulars -->
             <div class="particulars-title">Taxpayer's particulars:</div>
             <ol class="particulars-list">
               <li>1. Company Name: <span class="bold">HAPPIERLOAN INC.</span></li>
@@ -222,24 +183,6 @@
             <!-- Date -->
             <div class="date-section">
               Date : <span class="bold">November 17,2025</span>
-            </div>
-
-            <!-- Integrated Note and Authority Section (Central Layout) -->
-            <div class="note-and-authority">
-              <div class="note-text please-note">
-                <h5>Please Note :</h5>
-                1. A Taxpayer is liable to file the Return of income under section 75 of the income Tax Ordinance, 1984.<br>
-                2. Failure to file Return of income under section 75 is liable to-<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;(a) Penalty under section 124 and<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;(b) Prosecution Under Section 164 of the income Tax Ordinance, 1984
-              </div>
-
-              <div class="authority-text">
-                <div class="bold">Deputy Commissioner of Taxes</div>
-                Taxes Circle-131<br>
-                Taxes Zone 06, Dhaka<br>
-                Address : 209/A-B, Shahid Syed Nazrul Islam Sarani Purana Paltan, Dhaka Phone 55112438
-              </div>
             </div>
 
             <div class="nb-footer">
